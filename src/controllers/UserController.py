@@ -1,4 +1,21 @@
-from models.UsersModel import UsersModel
+from models.UsersModel import  UserModel
+
+class UserController:
+    def __init__(self):
+        self.user_model = UserModel()
+
+    def create_user(self, user_data):
+        if self.user_model.validate_data(user_data):
+            result = self.user_model.create(user_data)
+            return result
+        else:
+            return "Datos de usuario no válidos"
+
+    def get_users(self):
+        return self.user_model.read()
+
+
+"""from models.UsersModel import UsersModel
 
 
 class UserController:
@@ -17,4 +34,4 @@ class UserController:
     # def edit_user(id)
     # def delete_user(id)
 
-
+"""
