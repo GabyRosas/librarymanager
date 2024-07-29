@@ -6,7 +6,7 @@ def main():
     # Crear un nuevo usuario
     new_user = {
         'name': 'John Doe',
-        'membership_number': 'MEM129',
+        'identification_number': 'MEM129',
         'email': 'john@example.com',
         'phone': '555-7890',
         'address': '123 Elm St'
