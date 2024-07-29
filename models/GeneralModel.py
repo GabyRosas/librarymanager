@@ -1,7 +1,8 @@
 from config.DbConnection import Connection # para conection
+from models.InterfaceModel import InterfaceModel
 import psycopg2  # para manejar errores de BBDD
 
-class GeneralModel:
+class GeneralModel(InterfaceModel):
     def __init__(self):
         self.connection = Connection().get_connection()  # conection
 #crud
@@ -56,3 +57,4 @@ class GeneralModel:
         except psycopg2.Error as e:
             self.connection.rollback()
             print(f"Error al eliminar de la tabla {table}: {e}")
+
