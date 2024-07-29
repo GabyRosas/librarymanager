@@ -12,7 +12,7 @@ class UserModel(GeneralModel, InterfaceModel):  # herencia múltiple
     def validate_data(self, data):
         # Aquí puedes agregar la lógica para validar los datos del usuario.
         # Esto es solo un ejemplo básico.
-        required_fields = ['name', 'membership_number', 'email', 'phone', 'address']
+        required_fields = ['name', 'membership_number', 'email', 'phone']
         for field in required_fields:
             if field not in data or not data[field]:
                 return False

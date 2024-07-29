@@ -5,11 +5,11 @@ def main():
 
     # Crear un nuevo usuario
     new_user = {
-        'name': 'John Doe',
+        'name': 'Vivi de Garzon',
         'membership_number': 'MEM129',
-        'email': 'john@example.com',
-        'phone': '555-7890',
-        'address': '123 Elm St'
+        'Email': 'john@example.com',
+        'phone': '1233',
+        'address': ''
     }
 
     result = user_controller.create_user(new_user)
