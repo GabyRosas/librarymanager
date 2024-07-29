@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod  # ABC una clase base para definir clases ab
 
 class InterfaceModel(ABC):
     @abstractmethod
-    def create(self, data): # data es una paranetro para crear nueva data en BBDD
+    def create(self, data):  # data es una paranetro para crear nueva data en BBDD
         pass
 
     @abstractmethod
@@ -18,10 +18,5 @@ class InterfaceModel(ABC):
     def delete(self, criteria=None):
         pass
 
-    @abstractmethod
-    def validate_data(self, data=None):
-        pass
 
-    @abstractmethod
-    def search(self, criteria):
-        pass
+
