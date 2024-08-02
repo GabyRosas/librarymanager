@@ -7,11 +7,17 @@ class CategoryModel(GeneralModel):
         super().__init__()
         self.table = 'categories'
 
-    def create(self, data):
+    def create(self, table, data):
         return super().create(self.table, data)
+
+    def read(self, table, criteria=None):
+        return super().read(self.table, criteria)
 
     def update(self, data, criteria):
         return super().update(self.table, data, criteria)
+
+    def delete(self, table, criteria):
+        return super().delete(self.table, criteria)
 
     def category_exists(self, data):
         category_name = data.get('category_name')
