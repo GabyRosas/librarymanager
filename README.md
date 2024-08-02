@@ -2,12 +2,12 @@
 
 
 
-- [Ir a Descripción del proyecto](https://github.com/jess-ar/content-enrichment#1-descripci%C3%B3n-del-proyecto)
-- [Ir a Requisitos e instalaciones](https://github.com/jess-ar/content-enrichment#2-requisitos-e-instalaciones)
-- [Ir a Tecnologías](https://github.com/jess-ar/content-enrichment#3-tecnologias-y-dependencias)
-- [Ir a Desarrollo del producto](https://github.com/jess-ar/content-enrichment#4-desarrollo-del-proyecto)
-- [Ir a Herramientas](https://github.com/jess-ar/content-enrichment#5-herramientas)
-- [Ir a Equipo](https://github.com/jess-ar/content-enrichment#6-equipo)
+- [Ir a Descripción del proyecto](https://github.com/GabyRosas/librarymanager#1-descripci%C3%B3n-del-proyecto)
+- [Ir a Requisitos e instalaciones](https://github.com/GabyRosas/librarymanager#2-requisitos-e-instalaciones)
+- [Ir a Tecnologías](https://github.com/GabyRosas/librarymanager#3-tecnologias-y-dependencias)
+- [Ir a Desarrollo del producto](https://github.com/GabyRosas/librarymanager#4-desarrollo-del-proyecto)
+- [Ir a Herramientas](https://github.com/GabyRosas/librarymanager#5-herramientas)
+- [Ir a Equipo](https://github.com/GabyRosas/librarymanager#6-equipo)
 
 ### 1. Descripción del proyecto
 
