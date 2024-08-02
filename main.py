@@ -1,14 +1,50 @@
+from models.UsersModel import UserModel
+from src.controllers.UserController import UserController
 
 
+def main():
+    user_controller = UserController()
 
-"""from src.controllers.UserController import UserController
+    new_user = {
+        'name': 'John Doe',
+        'identification_number': 'Z1315244X',
+        'email': 'john@example.com',
+        'phone': '555-7890',
+        'address': '123 Elm St'
+    }
 
-user = UserController()
-name = 'Seda'
-password = 'holi589'
+    result = user_controller.create_user(new_user)
+    print(result)
 
-register = user.create_user(name, password)
+    name = "name"
+    identification_number = "identification_number"
+    phone = "phone_number"
 
-print(register)
+    users = user_controller.read_user(name=name, identification_number=identification_number, phone=phone)
+    if users:
+        for user in users:
+            print(user)
+    else:
+        print("No se encontraron usuarios que coincidan con los criterios de búsqueda.")
 
-"""
+    user_id = 1
+    new_data = {
+        'name': 'Juan Perez Updated',
+        'phone': '555-4321'
+    }
+    updated_rows = user_controller.update_user(user_id, new_data)
+    if updated_rows:
+        print(f"Se actualizaron {updated_rows} filas.")
+    else:
+        print("No se pudo actualizar el usuario.")
+
+    user_id_to_delete = 2
+    deleted_rows = user_controller.delete_user(user_id_to_delete)
+    if deleted_rows:
+        print(f"Se eliminaron {deleted_rows} filas.")
+    else:
+        print("No se pudo eliminar el usuario.")
+
+
+if __name__ == '__main__':
+    main()

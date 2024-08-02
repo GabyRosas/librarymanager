@@ -1,4 +1,6 @@
 from abc import ABC, abstractmethod  # ABC una clase base para definir clases abstractas
+
+
 # y  abstractmethod decorador que se usa para definir métodos abstractos
 
 class InterfaceModel(ABC):
@@ -17,6 +19,3 @@ class InterfaceModel(ABC):
     @abstractmethod
     def delete(self, criteria=None):
         pass
-
-
-
