@@ -1,17 +1,18 @@
-# Library Manager
+
+ Library Manager
 
 
 
-- [Ir a Descripción del proyecto](https://github.com/GabyRosas/librarymanager#1-descripci%C3%B3n-del-proyecto)
-- [Ir a Requisitos e instalaciones](https://github.com/GabyRosas/librarymanager#2-requisitos-e-instalaciones)
-- [Ir a Tecnologías](https://github.com/GabyRosas/librarymanager#3-tecnologias-y-dependencias)
-- [Ir a Desarrollo del producto](https://github.com/GabyRosas/librarymanager#4-desarrollo-del-proyecto)
-- [Ir a Herramientas](https://github.com/GabyRosas/librarymanager#5-herramientas)
-- [Ir a Equipo](https://github.com/GabyRosas/librarymanager#6-equipo)
+- Descripción del proyecto
+- Requisitos 
+- Instalación
+-  Tecnologías
+- Tecnologías
+
 
 ### 1. Descripción del proyecto
 
-Es un sistema de gestión de bibliotecas que incluya funcionalidades esenciales para la gestión de inventario, préstamo de libros y alta de usuarios
+**Library Manager** es un sistema integral de gestión de bibliotecas diseñado para automatizar y optimizar las operaciones cotidianas en bibliotecas de cualquier tamaño. Este sistema se enfoca en la gestión eficiente del inventario de libros, la administración de usuarios, y la supervisión del proceso de préstamo y devolución, proporcionando una solución completa y fácil de usar para bibliotecarios y usuarios.
 
 ### 2. Requisitos 
 Antes de empezar, tienes que asegúrate de tener instalados los siguientes programas:
@@ -28,7 +29,7 @@ Sigue estos pasos para instalar y configurar el entorno de desarrollo:
 
 #### Clona el repositorio
 
-git clone link
+git clone link https://github.com/GabyRosas/librarymanager
 
 #### Entra en el directorio del proyecto
 
@@ -47,12 +48,9 @@ pip freeze > requirements.tx
 Backend: -Python
 Base de datos-Postgresql
 
-
-
-
-### 5. Equipo
+### 5.  Tecnologías
 
 - [Carla] ([https://github.com/Carlassanchez24](https://github.com/Carlassanchez247)) - SM
 - [Gabriela] ([https://github.com/GabyRosas](https://github.com/GabyRosas)) - PO
 - [Viviana] ([https://github.com/RafGab](https://github.com/RafGabr)) -Developer
--  [Seda Gevorgyan] ([https://github.com/Seda07](https://github.com/Seda07)) - Developer
+- [Seda Gevorgyan] ([https://github.com/Seda07](https://github.com/Seda07)) - Developer
