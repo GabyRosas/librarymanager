@@ -1,6 +1,22 @@
 import pytest
 from datetime import date, timedelta
+import os
+import sys
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 from src.controllers.LoanController import LoanController
+
+"""
+Este archivo contiene pruebas para el controlador de préstamos utilizando pytest.
+Las pruebas cubren los siguientes escenarios:
+Creación exitosa de un préstamo.
+Creación de un préstamo cuando el libro no está disponible.
+Fallo en la creación de un préstamo.
+Devolución exitosa de un libro.
+Fallo al devolver un libro cuando no se encuentra el préstamo.
+Fallo al actualizar el inventario al devolver un libro.
+
+Las pruebas utilizan una implementación de prueba para simular la lógica del modelo de préstamos y comprobar los resultados esperados.
+"""
 
 @pytest.fixture
 def loan_controller(mocker):
