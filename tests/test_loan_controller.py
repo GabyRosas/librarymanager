@@ -4,8 +4,9 @@ from src.controllers.LoanController import LoanController
 
 @pytest.fixture
 def loan_controller(mocker):
-    loan_model_mock = mocker.Mock()
-    return LoanController(loan_model_mock)
+    controller = LoanController()
+    controller.loan_model = mocker.Mock()  # Mock del modelo después de la creación
+    return controller
 
 def test_create_loan_success(loan_controller, mocker):
     mocker.patch.object(loan_controller.loan_model, 'is_book_available', return_value=True)
@@ -20,10 +21,10 @@ def test_create_loan_success(loan_controller, mocker):
     }
 
     result = loan_controller.create_loan(loan_data)
-    assert result == {"loan_id": 1}
+    assert result == "Préstamo creado con éxito."
 
     mock_create.assert_called_once_with(loan_data)
-    mock_update_inventory.assert_called_once_with(1, -1)
+    mock_update_inventory.assert_called_once_with(1, increment=False)
 
 def test_create_loan_book_not_available(loan_controller, mocker):
     mocker.patch.object(loan_controller.loan_model, 'is_book_available', return_value=False)
@@ -42,11 +43,10 @@ def test_create_loan_book_not_available(loan_controller, mocker):
 
 def test_notify_due_today(loan_controller, mocker):
     mocker.patch.object(loan_controller.loan_model, 'get_loans_due_today', return_value=[{
-        'user_id': 1,
+        'user_email': 'user@example.com',
         'due_date': date.today().isoformat()
     }])
     mock_send_notification = mocker.patch.object(loan_controller, 'send_notification')
-    mocker.patch.object(loan_controller.loan_model, 'get_user_email', return_value='user@example.com')
 
     loan_controller.notify_due_today()
 
@@ -58,11 +58,10 @@ def test_notify_due_today(loan_controller, mocker):
 
 def test_notify_overdue(loan_controller, mocker):
     mocker.patch.object(loan_controller.loan_model, 'get_overdue_loans', return_value=[{
-        'user_id': 1,
+        'user_email': 'user@example.com',
         'due_date': (date.today() - timedelta(days=1)).isoformat()
     }])
     mock_send_notification = mocker.patch.object(loan_controller, 'send_notification')
-    mocker.patch.object(loan_controller.loan_model, 'get_user_email', return_value='user@example.com')
 
     loan_controller.notify_overdue()
 
@@ -74,11 +73,10 @@ def test_notify_overdue(loan_controller, mocker):
 
 def test_notify_due_in_3_days(loan_controller, mocker):
     mocker.patch.object(loan_controller.loan_model, 'get_loans_due_in_3_days', return_value=[{
-        'user_id': 1,
+        'user_email': 'user@example.com',
         'due_date': (date.today() + timedelta(days=3)).isoformat()
     }])
     mock_send_notification = mocker.patch.object(loan_controller, 'send_notification')
-    mocker.patch.object(loan_controller.loan_model, 'get_user_email', return_value='user@example.com')
 
     loan_controller.notify_due_in_3_days()
 
@@ -90,10 +88,18 @@ def test_notify_due_in_3_days(loan_controller, mocker):
 
 def test_return_book_success(loan_controller, mocker):
     mock_update_inventory = mocker.patch.object(loan_controller.loan_model, 'update_book_inventory')
-    mock_update_loan_status = mocker.patch.object(loan_controller.loan_model, 'update_loan_status', return_value=True)
+    mock_update_loan_status = mocker.patch.object(loan_controller.loan_model, 'update', return_value=True)
 
-    result = loan_controller.return_book(1, 1)
-    assert result == "Libro devuelto exitosamente."
+    loan_controller.loan_model.get_book_id_from_loan.return_value = 1
 
-    mock_update_inventory.assert_called_once_with(1, 1)
-    mock_update_loan_status.assert_called_once_with(1, 'returned')
+    result = loan_controller.return_book(1)
+    assert result == "El libro ha sido devuelto y el inventario actualizado."
+
+    mock_update_inventory.assert_called_once_with(1, increment=True)
+    mock_update_loan_status.assert_called_once_with({'return_date': date.today()}, {'loan_id': 1})
+
+def test_return_book_loan_not_found(loan_controller, mocker):
+    loan_controller.loan_model.get_book_id_from_loan.return_value = None
+
+    result = loan_controller.return_book(1)
+    assert result == "No se encontró el préstamo para el ID proporcionado."
