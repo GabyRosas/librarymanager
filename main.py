@@ -6,11 +6,11 @@ def main():
     user_controller = UserController()
 
     new_user = {
-        'name': 'John Doe',
-        'identification_number': 'Z1315244X',
-        'email': 'john@example.com',
+        'name': 'Laura Duque',
+        'identification_number': 'Z1315226X',
+        'email': 'lau@example.com',
         'phone': '555-7890',
-        'address': '123 Elm St'
+        'address': '456 Elm St'
     }
 
     result = user_controller.create_user(new_user)
