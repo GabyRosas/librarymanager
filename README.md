@@ -43,7 +43,7 @@ Base de datos-Postgresql
 
 ## **5. Equipo**
 
-- [Carla] ([https://github.com/Carlassanchez24](https://github.com/Carlassanchez247)) - SM
+- [Carla] ([https://github.com/Carlassanchez24](https://github.com/Carlassanchez24)) - SM
 - [Gabriela] ([https://github.com/GabyRosas](https://github.com/GabyRosas)) - PO
-- [Viviana] ([https://github.com/RafGab](https://github.com/RafGabr)) -Developer
+- [Viviana] ([https://github.com/RafGab](https://github.com/RafGab)) -Developer
 - [Seda Gevorgyan] ([https://github.com/Seda07](https://github.com/Seda07)) - Developer
