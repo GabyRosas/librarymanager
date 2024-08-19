@@ -3,23 +3,18 @@ from psycopg2 import Error
 from dotenv import load_dotenv
 import os
 
-# Cargar las variables de entorno del .env
 load_dotenv()
-
-
 class Connection:
-    _instance = None  # permite crear una única Instancia (patron singleton)
-
-    # Método especial -> creación de un objeto de la intancia de clase
+    _instance = None
     def __new__(cls):
         if cls._instance is None:
             cls._instance = super().__new__(cls)
             cls._instance._connection = None
         return cls._instance
 
-    # Constructor
+
     def __init__(self):
-        #  aseguramos que se inicialice una vez
+
         if self._connection is None:
             try:
                 self._connection = psycopg2.connect(host=os.getenv('DB_HOST'), port=os.getenv('DB_PORT'), user=os.getenv('DB_USER'), password=os.getenv('DB_PASSWORD'),
