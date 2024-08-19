@@ -5,7 +5,11 @@
 
     <orderEntry type="jdk" jdkName="Python 3.12 (librarymanager)" jdkType="Python SDK" />
 
+
+    <orderEntry type="jdk" jdkName="Python 3.12 (librarymanager)" jdkType="Python SDK" />
+
     <orderEntry type="jdk" jdkName="Python 3.12 (librarymanager) (3)" jdkType="Python SDK" />
+
 
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
