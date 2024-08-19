@@ -6,8 +6,8 @@
 - Descripción del proyecto
 - Requisitos 
 - Instalación
--  Tecnologías
 - Tecnologías
+- Equipo
 
 
 ### 1. Descripción del proyecto
@@ -48,7 +48,7 @@ pip freeze > requirements.tx
 Backend: -Python
 Base de datos-Postgresql
 
-### 5.  Tecnologías
+### 5.  Equipo
 
 - [Carla] ([https://github.com/Carlassanchez24](https://github.com/Carlassanchez247)) - SM
 - [Gabriela] ([https://github.com/GabyRosas](https://github.com/GabyRosas)) - PO
