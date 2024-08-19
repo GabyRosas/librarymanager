@@ -21,7 +21,7 @@ Antes de empezar, tienes que asegúrate de tener instalados los siguientes progr
     
 - Psycopy2
     
-- Pytesrt
+- Pytest
 
 ### 3. Instalación
 
