@@ -1,5 +1,6 @@
 from models.CategoriesModel import CategoryModel
 
+
 class CategoryController:
     def __init__(self):
         self.category_model = CategoryModel()
@@ -29,7 +30,6 @@ class CategoryController:
             return {'Categoría actualizada exitosamente.'}
         else:
             return {'La categoría no fue actualizada.'}
-        #return result
 
     def delete_category(self, criteria):
         if self.category_model.category_exists(criteria):

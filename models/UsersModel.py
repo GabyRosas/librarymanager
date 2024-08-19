@@ -1,4 +1,3 @@
-
 from models.GeneralModel import GeneralModel
 import psycopg2
 

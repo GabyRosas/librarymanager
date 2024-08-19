@@ -1,6 +1,3 @@
-import psycopg2
-
-
 from models.UsersModel import UserModel
 
 

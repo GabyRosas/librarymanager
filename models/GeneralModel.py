@@ -2,11 +2,12 @@ from config.DbConnection import Connection
 from models.InterfaceModel import InterfaceModel
 import psycopg2
 
+
 class GeneralModel(InterfaceModel):
     def __init__(self):
         self.connection = Connection().get_connection()  
 
-    
+
     def create(self, table, data):
         columns = ', '.join(data.keys())
         values = ', '.join(['%s'] * len(data))
