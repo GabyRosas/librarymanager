@@ -1,5 +1,5 @@
 from config.DbConnection import Connection # para conection
-from models.InterfaceModel import InterfaceModel
+from .InterfaceModel import InterfaceModel
 import psycopg2  # para manejar errores de BBDD
 
 class GeneralModel(InterfaceModel):
